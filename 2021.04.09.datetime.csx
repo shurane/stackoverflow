@@ -20,3 +20,7 @@ while(true){
     i+=1;
     Thread.Sleep(1000);
 }
+
+// would be nice to see a Timer implementation. Especially one that accounts for drift
+// See https://stackoverflow.com/questions/1091710/c-sharp-timer-or-thread-sleep
+// See https://docs.microsoft.com/en-us/dotnet/api/system.threading.timer
