@@ -11,11 +11,11 @@ int i = 0;
 while(true){
     DateTime now = DateTime.Now;
     if (now.Second >= start.Second + 10){
-        Console.WriteLine($"{now}: Enough time elapsed, resetting time");
+        Console.WriteLine($"{i,3} {now}: Enough time elapsed, resetting time");
         start = now;
     }
     else {
-        Console.WriteLine($"{now}: Haven't reached the right time");
+        Console.WriteLine($"{i,3} {now}: Haven't reached the right time");
     }
     i+=1;
     Thread.Sleep(1000);
