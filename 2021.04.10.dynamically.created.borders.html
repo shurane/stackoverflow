@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        li {
+            margin: 5px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li id="AFG">Afghanistan</li>
+        <li id="ALB">Albania</li>
+        <li id="DZA">Algeria</li>
+        <li id="HUN">Hungary</li>
+        <li id="LVA">Latvia</li>
+        <li id="LBY">Libya</li>
+        <li id="PRT">Portugal</li>
+        <li id="THA">Thailand</li>
+    </ul>
+    <script>
+        // ISO-3166 country codes collection https://www.iso.org/obp/ui#iso:pub:PUB500001:en
+        const matches = [
+            // { "code": "AF", "code3": "AFG", "name": "Afghanistan", "number": "004" },
+            // { "code": "AL", "code3": "ALB", "name": "Albania", "number": "008" },
+            // { "code": "DZ", "code3": "DZA", "name": "Algeria", "number": "012" },
+            // { "code": "HU", "code3": "HUN", "name": "Hungary", "number": "348" },
+            { "code": "LV", "code3": "LVA", "name": "Latvia", "number": "428" },
+            { "code": "LY", "code3": "LBY", "name": "Libya", "number": "434" },
+            { "code": "PT", "code3": "PRT", "name": "Portugal", "number": "620" },
+            { "code": "TH", "code3": "THA", "name": "Thailand", "number": "764" }
+        ];
+
+        const nodes = document.getElementsByTagName("li");
+        [...nodes].forEach(element => {
+            element.addEventListener("click", e => {
+                if (matches.find(d => d["code3"] === e.target.id) !== undefined){
+                    e.target.style.border = "2px solid green";
+                }
+                else {
+                    e.target.style.border = "2px solid red";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
